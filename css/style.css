@@ -1,0 +1,95 @@
+body{
+    background-color: rgb(209, 209, 209);
+}
+
+h1{
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Outfit', sans-serif;
+}
+
+.amountbutton
+{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(0, 255, 64);
+    font-weight: bold;
+}
+ 
+.ui
+{
+    margin: 5px;
+}
+
+.roll
+{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-image: url('img/1.png')
+}
+
+.playerturn
+{
+    display: inline-block;
+    background-color: lightgreen;
+    width: 50px;
+    height: 20px;
+}
+
+.board
+{
+    height: 600px;
+    width: 600px;
+}
+
+.boardoverlay
+{
+    top: 200px;
+    position: absolute;
+    background-image: url('img/board.png');
+    height: 600px;
+    width: 600px;
+    
+}
+
+.pawn
+{
+    top: 80px;
+    position: absolute;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    display: none;
+}
+
+.pawn0
+{
+    background-image: url('img/Red.png');
+}
+
+.pawn1
+{
+    background-image: url('img/Yellow.png');
+}
+
+.pawn2
+{
+    background-image: url('img/Green.png');
+}
+
+.pawn3
+{
+    background-image: url('img/Blue.png');
+}
+
+.tile
+{
+    
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: lime;
+    color: linen;
+}
+
