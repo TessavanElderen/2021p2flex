@@ -26,7 +26,8 @@ h1{
     display: inline-block;
     width: 50px;
     height: 50px;
-    background-image: url('img/1.png')
+    background-image: url('img/dice1.png');
+    
 }
 
 .playerturn
@@ -34,7 +35,7 @@ h1{
     display: inline-block;
     background-color: lightgreen;
     width: 50px;
-    height: 20px;
+    height: 30px;
 }
 
 .board
@@ -45,42 +46,41 @@ h1{
 
 .boardoverlay
 {
-    top: 200px;
+    top: 0px;
     position: absolute;
-    background-image: url('img/board.png');
-    height: 600px;
+    background-image: url('img/snakes.png');
     width: 600px;
-    
+    height: 600px;
 }
 
 .pawn
 {
-    top: 80px;
+    top: 0px;
     position: absolute;
     background-size: contain;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     display: none;
 }
 
 .pawn0
 {
-    background-image: url('img/Red.png');
+   background-image: url('img/pawn0.png') ;
 }
 
 .pawn1
 {
-    background-image: url('img/Yellow.png');
+    background-image: url('img/pawn1.png') ;
 }
 
 .pawn2
 {
-    background-image: url('img/Green.png');
+    background-image: url('img/pawn2.png') ;
 }
 
 .pawn3
 {
-    background-image: url('img/Blue.png');
+    background-image: url('img/pawn3.png') ;
 }
 
 .tile
