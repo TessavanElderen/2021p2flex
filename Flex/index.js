@@ -51,8 +51,8 @@ class Game
             0, 3, 3, 3, 3, 3, 3, 3, 3, 0, 
             0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
-        let x = 0;
-        let y = 10;
+        let x = 11;
+        let y = 11;
         let tileSize = 55;
 
         for (var i = 0; i < path.length; i++)
@@ -81,9 +81,6 @@ class Game
         this.setupGoto(); 
     } 
 
-    
-
-
     setupGoto()
     {
         let goto = [[6, 14], [16, 4], [17, 23], [27, 33], [29, 10], [38, 43], [39, 20], [45, 34]];
@@ -103,7 +100,7 @@ class Game
 
     start(amountOfPlayer)
     {
-    
+        
     }
 
     moveToNextPlayer()
