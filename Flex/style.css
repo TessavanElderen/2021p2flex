@@ -76,11 +76,13 @@ h1{
     width: 20px;
     height: 20px;
     display: none;
+    background-color: lime;
 }
 
 .pawn0
 {
    background-image: url('img/pawn0.png') ;
+
 }
 
 .pawn1
@@ -107,3 +109,6 @@ h1{
     color: white;
 }
 
+.winner{
+    display: none; 
+}

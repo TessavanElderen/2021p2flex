@@ -100,17 +100,64 @@ class Game
 
     start(amountOfPlayer)
     {
+
+        //winner hide 
+        this.winnerDiv.style.display = "none";
+
+        //select player hide 
+        this.selectplayerDiv.style.display = "none";
         
+        var pawnArrey  = document.getElementsByClassName("pawn")
+        for (var i = 0; i < pawnArrey.length; i++)
+        {
+            pawnArrey[i].style.display = "none";
+        }
+        //player aanmaken
+        for (var i = 0; i < amountOfPlayer; i++)
+        {
+            let player = new Player(i);
+            this.players.push(player);
+        }
+
+        // pawns alle 4 hide -> selectie class pawn
+       
+        //eerste beurt starten
+        this.moveToNextPlayer();
+
+        //playerturn = -1
+        this.playerTurn = -1;
     }
 
     moveToNextPlayer()
     {
+        //playerturn ophogen naar de volgende speler 
+        this.playerTurn++;   
 
+        //playerturn groter dan het aantal spelers?
+
+
+        //Dan wil je terug naar de eerste speler
+        if(this.playerTurn == this.players.length)
+        {
+            this.playerTurn = 0;
+        }
+
+        //draw aanroepen
+        this.draw();
     }
 
     draw()
     {
+        
+        // pawn neerzetten op de huidige locatie van de speler
+        for (var i = 0; i < this.players.length; i++)
+        {
+            let player = this.players[i];
+            this.setPawn(i, player.atTile);
+        }
 
+        //setpawn
+        
     }
 
     roll()
@@ -120,7 +167,10 @@ class Game
 
     setPawn(playerI, atTile)
     {
-
+        let tile = this.tiles[atTile];
+        let pawn = this.players[playerI].pawn; 
+        pawn.style.top = tile.div.style.top;
+        pawn.style.left = tile.div.style.left;  
     }
 
     makeBoardDiv(x, y, tileDisplayNumber)
@@ -137,3 +187,5 @@ class Game
         return div; 
     }
 }
+
+
