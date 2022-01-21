@@ -121,11 +121,11 @@ class Game
 
         // pawns alle 4 hide -> selectie class pawn
        
+        //playerturn = -1
+        this.playerTurn = -1;
         //eerste beurt starten
         this.moveToNextPlayer();
 
-        //playerturn = -1
-        this.playerTurn = -1;
     }
 
     moveToNextPlayer()
@@ -161,6 +161,11 @@ class Game
         // willekeurig getal (1 t/m 6)
         let gooien = Math.floor((Math.random() * 6) + 1);
         let player = this.players[this.playerTurn];
+
+        this.rollDiv.style.backgroundImage = "url('img/dice" + gooien + ".png')"; 
+
+        player.atTile += gooien;
+        this.moveToNextPlayer(); 
     }
 
     setPawn(playerI, atTile)
