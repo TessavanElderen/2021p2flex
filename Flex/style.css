@@ -60,8 +60,8 @@ h1{
 
 .boardoverlay
 {
-    left: 609px;
-    top: 128px;
+    left: 610px;
+    top: 182px;
     position: absolute;
     background-image: url('img/snakes.png');
     width: 610px;

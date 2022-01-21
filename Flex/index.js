@@ -52,7 +52,7 @@ class Game
             0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
         let x = 11;
-        let y = 11;
+        let y = 12;
         let tileSize = 55;
 
         for (var i = 0; i < path.length; i++)
@@ -99,19 +99,19 @@ class Game
     } 
 
     start(amountOfPlayer)
-    {
-
-        //winner hide 
+    { 
         this.winnerDiv.style.display = "none";
-
-        //select player hide 
         this.selectplayerDiv.style.display = "none";
-        
-        var pawnArrey  = document.getElementsByClassName("pawn")
-        for (var i = 0; i < pawnArrey.length; i++)
+        this.mainDiv.style.display = "block";
+
+        let pawns = document.getElementsByClassName("pawn")
+        for (var i = 0; i < pawns.length; i++)
         {
-            pawnArrey[i].style.display = "none";
+            pawns[i].style.display = "none";
         }
+
+        this.player = [];
+
         //player aanmaken
         for (var i = 0; i < amountOfPlayer; i++)
         {
@@ -131,18 +131,13 @@ class Game
     moveToNextPlayer()
     {
         //playerturn ophogen naar de volgende speler 
-        this.playerTurn++;   
-
-        //playerturn groter dan het aantal spelers?
-
-
-        //Dan wil je terug naar de eerste speler
+        this.playerTurn++;  
+        
         if(this.playerTurn == this.players.length)
         {
             this.playerTurn = 0;
         }
 
-        //draw aanroepen
         this.draw();
     }
 
@@ -156,21 +151,25 @@ class Game
             this.setPawn(i, player.atTile);
         }
 
-        //setpawn
+        // setpawn
         
     }
 
     roll()
     {
-
+        // klikken
+        // willekeurig getal (1 t/m 6)
+        let gooien = Math.floor((Math.random() * 6) + 1);
+        let player = this.players[this.playerTurn];
     }
 
     setPawn(playerI, atTile)
     {
         let tile = this.tiles[atTile];
         let pawn = this.players[playerI].pawn; 
+
+        pawn.style.left = tile.div.style.left; 
         pawn.style.top = tile.div.style.top;
-        pawn.style.left = tile.div.style.left;  
     }
 
     makeBoardDiv(x, y, tileDisplayNumber)
