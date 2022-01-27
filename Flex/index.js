@@ -137,6 +137,7 @@ class Game
         {
             this.playerTurn = 0;
         }
+        this.playerturnDiv.textContent = "player " + (this.playerTurn+1); 
 
         this.draw();
     }
@@ -157,14 +158,26 @@ class Game
 
     roll()
     {
-        // klikken
-        // willekeurig getal (1 t/m 6)
         let gooien = Math.floor((Math.random() * 6) + 1);
-        let player = this.players[this.playerTurn];
-
         this.rollDiv.style.backgroundImage = "url('img/dice" + gooien + ".png')"; 
 
+        let player = this.players[this.playerTurn];
         player.atTile += gooien;
+        
+        if (player.atTile >= 49){
+            this.winnerDiv.style.display = "block"; 
+            this.winnerDiv.textContent = "Player " + (this.playerTurn+1) + " Wins!"; 
+            this.mainDiv.style.display = "none";
+        }
+        
+        this.draw();
+
+        let tile = this.tiles[player.atTile];
+        if(tile.goto != -1)
+        {
+            player.atTile = tile.goto;
+            this.draw();
+        }
         this.moveToNextPlayer(); 
     }
 
